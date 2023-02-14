@@ -1,4 +1,3 @@
-import { faGaugeSimpleMed } from "@fortawesome/free-solid-svg-icons";
 import { atom } from "recoil";
 
 export const filtersAtom = atom({
@@ -8,6 +7,13 @@ export const filtersAtom = atom({
     sort: "relevancy",
     category: "Movies",
     currentPage: 1,
+  },
+});
+
+export const viewAtom = atom({
+  key: "viewAtom",
+  default: {
+    numCols: 1,
   },
 });
 
