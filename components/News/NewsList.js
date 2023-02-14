@@ -1,6 +1,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import fetcher from "../../lib/fetcher";
+import React, { useState, useEffect } from "react";
 import dateFormatter from "../../lib/dateFormatter";
 import { filtersAtom, imageAtom, viewAtom } from "../../atoms/filtersAtom";
 import { useRecoilState } from "recoil";
@@ -11,8 +12,10 @@ const NewsList = () => {
   const [filters, setFilters] = useRecoilState(filtersAtom);
   const [view, setView] = useRecoilState(viewAtom);
   const [simage, setSimage] = useRecoilState(imageAtom);
-  const debouncedSearch = useDebounce(filters.search, 500);
-  const baseURL = "https://newsapi.org/v2/everything?q=";
+  const debouncedSearch = useDebounce(filters.search, 5000);
+
+  //using swr resulting in cors block?? doesnt happen before
+  /*   const baseURL = "https://newsapi.org/v2/everything?q=";
   const { data, error } = useSWR(
     () =>
       `${baseURL}${
@@ -23,6 +26,28 @@ const NewsList = () => {
     fetcher
   );
 
+ */
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `/api/news?search=${
+            debouncedSearch ? debouncedSearch : filters.category
+          }&sort=${filters.sort}&currentPage=${filters.currentPage}`
+        );
+        const json = await response.json();
+        setData(json);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchData();
+  }, [debouncedSearch, filters.category, filters.sort, filters.currentPage]);
+
   if (error) return <div>Could not fetch articles, try again later</div>;
   if (!data) return <div>Loading...</div>;
 
@@ -30,7 +55,7 @@ const NewsList = () => {
     <ul className="flex flex-col gap-y-[14px] pt-[20px]">
       <div
         className={`grid ${
-          view.numCols === 1 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2"
+          view.numCols === 1 ? "grid-cols-1" : "grid-cols-1 md:grid-cols-2"
         } gap-4`}
       >
         {data &&
@@ -48,7 +73,7 @@ const NewsList = () => {
                 {simage && article.urlToImage ? (
                   <div
                     className={`relative ${
-                      view.numCols === 1 ? "w-1/4" : "w-2/3"
+                      view.numCols === 1 ? "w-2/3 lg:w-1/2 2xl:w-1/4" : "w-2/3"
                     } aspect-[1.5]`}
                   >
                     <Image

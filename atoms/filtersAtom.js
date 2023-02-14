@@ -1,7 +1,8 @@
 import { atom } from "recoil";
+import { v4 as uuid } from "uuid";
 
 export const filtersAtom = atom({
-  key: "filtersData",
+  key: uuid(),
   default: {
     search: "",
     sort: "relevancy",
@@ -11,13 +12,13 @@ export const filtersAtom = atom({
 });
 
 export const viewAtom = atom({
-  key: "viewAtom",
+  key: uuid(),
   default: {
     numCols: 1,
   },
 });
 
 export const imageAtom = atom({
-  key: "imageData",
+  key: uuid(),
   default: false,
 });

@@ -4,7 +4,7 @@ import Section from "./Section";
 
 function HomeProject() {
   return (
-    <Section>
+    <Section className="py-[100px]">
       <div className="w-full">
         <h2 className="">Personal Project</h2>
         <div className="flex w-full justify-between pt-[40px]">

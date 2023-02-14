@@ -248,7 +248,7 @@ function Hero() {
   return (
     <AnimateSharedLayout type="crossfade">
       <Section>
-        <motion.div className="relative h-[70vh] w-full">
+        <motion.div className="relative h-[90vh] w-full">
           <AnimatePresence>
             {loading ? (
               <motion.div key="loader" className="w-full absolute left-0 top-0">
