@@ -34,11 +34,11 @@ const Navbar = ({ toggle, route, router, ...props }) => {
             <div className={props.className}>Work</div>
           </Link>
           <Link
-            href="/archives"
+            href="/project"
             passHref
             className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
           >
-            <div className={props.className}>Archives</div>
+            <div className={props.className}>Project</div>
           </Link>
         </div>
         <div className="cursor-pointer md:hidden" onClick={toggle}>
@@ -114,11 +114,11 @@ const Sidebar = ({ isOpen, toggle, route, ...props }) => {
             </li>
             <li className="w-full">
               <Link
-                href="/contact"
+                href="/project"
                 passHref
                 className={`block px-5 text-[22px]`}
               >
-                <div>Contact</div>
+                <div>Project</div>
               </Link>
             </li>
           </ul>

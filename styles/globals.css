@@ -3,7 +3,16 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    @apply bg-[#0F1012] text-white;
+  }
   h1 {
     @apply text-[32px] xl:text-[64px];
+  }
+  h2 {
+    @apply text-[26px] xl:text-[36px];
+  }
+  h3 {
+    @apply text-[18px] xl:text-[24px];
   }
 }

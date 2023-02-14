@@ -3,10 +3,12 @@ import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import Section from "./Section";
 
 const hOne = "Hi, I'm Jeremy";
-const hTwo = "Frontend Developer";
+const hTwo = "I'm a Frontend Developer";
 const hThree =
-  "ReactJs / NextJs / HTML / CSS / JavaScript / TailwindCSS / ChakraUI / FramerMotion / REST API / AJAX";
-
+  "ReactJs / NextJs / HTML / CSS / JavaScript / TailwindCSS / ChakraUI / FramerMotion / REST API / AJAX / Recoil / SWR";
+const hFour = `I'm a Frontend Developer specializing in  (and sometimes designing) exceptional and accessible digital experiences.`;
+const hFive = "Hi, my name is";
+const hSix = "Jeremy Wijanto";
 function words(children) {
   return children.split(" ");
 }
@@ -19,7 +21,7 @@ const parent = {
   },
   exit: {
     opacity: 0,
-    y: -120,
+    y: -80,
     x: -400,
     transition: {
       ease: "easeInOut",
@@ -28,7 +30,7 @@ const parent = {
   },
 };
 const scaling = {
-  hidden: { scale: 1.3, x: 100 },
+  hidden: { scale: 1.3, x: 200 },
   visible: {
     scale: 1,
     x: 0,
@@ -135,7 +137,6 @@ function Banner() {
   const typeWriter = " hello world";
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
-
   useEffect(() => {
     setTimeout(() => {
       setCurrentText((value) => value + typeWriter.charAt(index));
@@ -148,10 +149,11 @@ function Banner() {
         variants={fadeIn}
         initial="hidden"
         animate="visible"
-        className="absolute left-0 top-[15vh]"
+        className="absolute left-0 top-[20vh] flex flex-col"
       >
-        <h1>{hOne}</h1>
-        <h1>{hTwo}</h1>
+        <p>{hFive}</p>
+        <h2>{hSix}</h2>
+        <h3 className="w-[700px] pb-[20px] ">{hFour}</h3>
         <div className="w-[400px] text-gray-600">
           <motion.p
             className="flex flex-wrap overflow-hidden"
@@ -169,7 +171,7 @@ function Banner() {
         variants={fadeIn}
         initial="hidden"
         animate="visible"
-        className="absolute right-0 top-[15vh] overflow-hidden"
+        className="absolute right-0 top-[17vh] overflow-hidden"
       >
         <motion.div
           variants={slideUp}
@@ -203,7 +205,7 @@ function Banner() {
             </div>
           </div>
 
-          <div className="bg-[#1E1E1E] h-[300px] rounded-b-md z-[-10]">
+          <div className="bg-[#1E1E1E] h-[260px] rounded-b-md z-[-10]">
             <div className="py-[10px] px-[15px]">
               <span className="text-[#A06DA0]">import </span>
               <span className="text-[#88DCFE]">React </span>

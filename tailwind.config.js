@@ -9,5 +9,5 @@ module.exports = {
       animation: { blinking: "blink 1s ease-in-out infinite" },
     },
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin")],
 };
