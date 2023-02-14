@@ -2,6 +2,7 @@ import React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import useTasks from "../../hooks/useTask";
 import dynamic from "next/dynamic";
+import Section from "../Section";
 
 const Delete = dynamic(() => import("./Delete"), { ssr: false });
 const Board = dynamic(() => import("./Board"), { ssr: false });
@@ -21,12 +22,17 @@ const Boards = () => {
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
-      <Delete />
-      <div className="flex w-full justify-between gap-x-[20px]">
-        <Board statusType="todo" />
-        <Board statusType="ongoing" />
-        <Board statusType="completed" />
-      </div>
+      <Section>
+        <Delete />
+      </Section>
+      <Section className="w-full overflow-x-auto overflow-y-hidden">
+        <div className="flex w-full justify-between gap-x-[20px]">
+          <Board statusType="todo" />
+          <Board statusType="ongoing" />
+          <Board statusType="completed" />
+          <div className="w-[30px] md:hidden flex">.</div>
+        </div>
+      </Section>
     </DragDropContext>
   );
 };

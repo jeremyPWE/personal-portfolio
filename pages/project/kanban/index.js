@@ -10,12 +10,12 @@ export default function Kanban() {
     <>
       <Header />
       <Layout>
-        <Section className="flex flex-col w-full">
-          <TaskProvider>
+        <TaskProvider>
+          <Section className="mt-[20px]">
             <Input />
-            <Boards />
-          </TaskProvider>
-        </Section>
+          </Section>
+          <Boards />
+        </TaskProvider>
       </Layout>
     </>
   );

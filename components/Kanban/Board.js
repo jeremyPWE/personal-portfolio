@@ -21,9 +21,11 @@ const Board = ({ statusType }) => {
   const tasks = state[statusType];
 
   return (
-    <div className="w-full mb-4 p-4 bg-[#191A20] rounded-md">
+    <div className="min-w-[300px] xl:min-w-0 w-full mb-4 p-4 bg-[#191A20] rounded-md">
       <div className="flex items-center justify-between mb-[20px]">
-        <h1 className="2xl:text-[28px]">{status[statusType].text}</h1>
+        <h1 className="xl:text-[24px] 2xl:text-[28px]">
+          {status[statusType].text}
+        </h1>
       </div>
       <Droppable droppableId={statusType}>
         {(provided) => (

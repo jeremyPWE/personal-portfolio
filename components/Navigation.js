@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 const Navbar = ({ toggle, route, router, ...props }) => {
   return (
     <nav
-      className="flex relative top-0 z-30 px-4 py-2 md:px-0 justify-center"
+      className="flex relative top-0 z-30 py-2 justify-center"
       role="navigation"
     >
       <Section>
@@ -47,7 +47,7 @@ const Navbar = ({ toggle, route, router, ...props }) => {
             className="h-8 w-8 "
             fill="main"
             viewBox="0 0 24 24"
-            stroke={props.stroke}
+            stroke="white"
           >
             <path
               strokeLinecap="round"
@@ -74,7 +74,7 @@ const Sidebar = ({ isOpen, toggle, route, ...props }) => {
       <div
         className={`absolute  top-0 right-0 z-30 w-full bg-bgCol h-full text-main overflow-hidden flex flex-col items-center justify-center`}
       >
-        <div className="flex py-4 items-center w-full justify-between px-4 sm:px-0 z-10 max-w-[500px]">
+        <div className="flex py-2 items-center w-full justify-between px-4 sm:px-0 z-10 max-w-[500px]">
           <div className="flex items-center relative w-[125px] h-[45px] md:w-[170px] md:h-[65px] xl:w-[224px] xl:h-[82px]">
             <Link href="/" passHref className="font-extrabold text-[24px]">
               <div className="text-white">jw</div>
