@@ -25,7 +25,7 @@ const Boards = () => {
       <Section>
         <Delete />
       </Section>
-      <Section className="w-full overflow-x-auto overflow-y-hidden">
+      <Section className="w-full overflow-x-scroll overflow-y-hidden">
         <div className="flex w-full justify-between gap-x-[20px]">
           <Board statusType="todo" />
           <Board statusType="ongoing" />
