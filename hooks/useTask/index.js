@@ -6,23 +6,27 @@ const initialTasks = {
   todo: [
     {
       id: uuid(),
-      title: "Masak nasi goreng",
+      title: "Drag and drop",
     },
     {
       id: uuid(),
-      title: "Beli alat tulis",
+      title: "Delete task by dragging it to bin",
+    },
+    {
+      id: uuid(),
+      title: "New task automatically appears here",
     },
   ],
   ongoing: [
     {
       id: uuid(),
-      title: "Bikin to do list",
+      title: "Task is stored locally",
     },
   ],
   completed: [
     {
       id: uuid(),
-      title: "Belajar untuk ulangan besok",
+      title: "Try using this simple kanban board",
     },
   ],
 };
