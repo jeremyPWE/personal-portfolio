@@ -22,7 +22,7 @@ const Board = ({ statusType }) => {
 
   return (
     <div className="w-full mb-4 p-4 bg-[#191A20] rounded-md">
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between mb-[20px]">
         <h1 className="2xl:text-[28px]">{status[statusType].text}</h1>
       </div>
       <Droppable droppableId={statusType}>
