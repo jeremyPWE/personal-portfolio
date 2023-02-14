@@ -8,6 +8,7 @@ export const filtersAtom = atom({
     sort: "relevancy",
     category: "Movies",
     currentPage: 1,
+    pageSize: 15,
   },
 });
 

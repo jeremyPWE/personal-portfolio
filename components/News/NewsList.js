@@ -37,7 +37,9 @@ const NewsList = () => {
         const response = await fetch(
           `/api/news?search=${
             debouncedSearch ? debouncedSearch : filters.category
-          }&sort=${filters.sort}&currentPage=${filters.currentPage}`
+          }&sort=${filters.sort}&currentPage=${filters.currentPage}&pageSize=${
+            filters.pageSize
+          }`
         );
         const json = await response.json();
         setData(json);
@@ -46,7 +48,13 @@ const NewsList = () => {
       }
     };
     fetchData();
-  }, [debouncedSearch, filters.category, filters.sort, filters.currentPage]);
+  }, [
+    debouncedSearch,
+    filters.category,
+    filters.sort,
+    filters.currentPage,
+    filters.pageSize,
+  ]);
 
   if (error) return <div>Could not fetch articles, try again later</div>;
   if (!data) return <div>Loading...</div>;
@@ -108,7 +116,11 @@ const NewsList = () => {
         )}
         <button
           onClick={() =>
-            setFilters({ ...filters, currentPage: filters.currentPage + 1 })
+            setFilters({
+              ...filters,
+              currentPage: filters.currentPage,
+              pageSize: filters.pageSize + 15,
+            })
           }
           disabled={filters.currentPage * 20 >= data.totalResults}
           className="border py-[5px] rounded-md w-full"
