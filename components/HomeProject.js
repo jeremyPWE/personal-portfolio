@@ -26,7 +26,7 @@ function HomeProject() {
                   />
                 </video>
               </div>
-              <p className="pt-[8px] xl:pt-[15px]">
+              <p className="pt-[8px] xl:pt-[15px] opacity-70">
                 The News App is an innovative tool powered by News API, designed
                 to demonstrate the capabilities of API parameters and keep users
                 informed with the latest news. With features like search and
@@ -52,7 +52,7 @@ function HomeProject() {
                   />
                 </video>
               </div>
-              <p className="pt-[8px] xl:pt-[15px]">
+              <p className="pt-[8px] xl:pt-[15px] opacity-70">
                 The Kanban Board app is a simple, yet effective tool for project
                 management. Created to learn about the powerful features of
                 reducer, dynamic import, and local storage, this app allows

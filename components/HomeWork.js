@@ -4,7 +4,7 @@ import Section from "./Section";
 function HomeWork() {
   const [work, setWork] = React.useState("merokket");
   return (
-    <Section>
+    <Section id="work">
       <div className="flex flex-col w-full">
         <h2>Work Experience</h2>
         <div className="flex flex-col lg:flex-row pt-[20px] lg:pt-[40px]">

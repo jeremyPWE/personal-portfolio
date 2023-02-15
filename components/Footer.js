@@ -2,9 +2,19 @@ import React from "react";
 import Link from "next/link";
 import Section from "./Section";
 
+const isBrowser = () => typeof window !== "undefined"; //The approach recommended by Next.js
+
+function scrollToTop() {
+  if (!isBrowser()) return;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function Footer() {
   return (
-    <Section className="text-white flex flex-col w-full items-center pt-[80px] pb-[100px]">
+    <Section
+      className="text-white flex flex-col w-full items-center pt-[80px] pb-[50px]"
+      id="contact"
+    >
       <h1 className="">Get In Touch.</h1>
       <p className="max-w-[600px] text-center pt-[20px] opacity-60">
         I am always open to exploring new collaborations and projects. If you
@@ -36,6 +46,13 @@ function Footer() {
           </Link>
         </li>
       </ul>
+
+      <p
+        className="border-b cursor-pointer pt-[50px] text-[14px]"
+        onClick={scrollToTop}
+      >
+        BACK TO TOP
+      </p>
     </Section>
   );
 }

@@ -6,7 +6,7 @@ const hOne = "Hi, I'm Jeremy";
 const hTwo = "I'm a Frontend Developer";
 const hThree =
   "ReactJs / NextJs / HTML / CSS / JavaScript / TailwindCSS / ChakraUI / FramerMotion / REST API / AJAX / Recoil / SWR";
-const hFour = `I'm a Frontend Developer specializing in  (and sometimes designing) exceptional and accessible digital experiences.`;
+const hFour = `I'm a Frontend Developer specializing in exceptional and accessible digital experiences.`;
 const hFive = "Hi, my name is";
 const hSix = "Jeremy Wijanto";
 function words(children) {
@@ -153,8 +153,10 @@ function Banner() {
       >
         <p>{hFive}</p>
         <h2>{hSix}</h2>
-        <h3 className="w-[700px] pb-[20px] ">{hFour}</h3>
-        <div className="w-[400px] text-gray-600">
+        <h3 className="md:w-[310px] lg:w-[400px] xl:w-[490px] 2xl:w-[600px] pb-[20px] ">
+          {hFour}
+        </h3>
+        <div className="md:w-[310px] lg:w-[400px] xl:w-[500px] opacity-60">
           <motion.p
             className="flex flex-wrap overflow-hidden"
             variants={container}
@@ -171,11 +173,11 @@ function Banner() {
         variants={fadeIn}
         initial="hidden"
         animate="visible"
-        className="absolute right-0 top-[17vh] overflow-hidden"
+        className="absolute right-0 top-[17vh] overflow-hidden hidden md:flex"
       >
         <motion.div
           variants={slideUp}
-          className="relative w-[500px] box-shadow-sm"
+          className="relative w-[320px] lg:w-[410px] 2xl:w-[500px] box-shadow-sm"
         >
           <div className="text-[#CACACA] bg-[#3C3C3C] flex justify-center py-[2px] rounded-t-md">
             <p>JW Studio Code</p>
