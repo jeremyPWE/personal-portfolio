@@ -1,6 +1,6 @@
-import Link from "next/link";
+import Link from "next/link"; /* 
 import useSWR from "swr";
-import fetcher from "../../lib/fetcher";
+import fetcher from "../../lib/fetcher"; */
 import React, { useState, useEffect } from "react";
 import dateFormatter from "../../lib/dateFormatter";
 import { filtersAtom, imageAtom, viewAtom } from "../../atoms/filtersAtom";
@@ -12,10 +12,10 @@ const NewsList = () => {
   const [filters, setFilters] = useRecoilState(filtersAtom);
   const [view, setView] = useRecoilState(viewAtom);
   const [simage, setSimage] = useRecoilState(imageAtom);
-  const debouncedSearch = useDebounce(filters.search, 5000);
+  const debouncedSearch = useDebounce(filters.search, 50000);
 
   //using swr resulting in cors block?? doesnt happen before
-  /*   const baseURL = "https://newsapi.org/v2/everything?q=";
+  /* const baseURL = "https://newsapi.org/v2/everything?q=";
   const { data, error } = useSWR(
     () =>
       `${baseURL}${
@@ -24,9 +24,7 @@ const NewsList = () => {
         process.env.NEXT_PUBLIC_API_KEY
       }`,
     fetcher
-  );
-
- */
+  ); */
 
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -56,7 +54,13 @@ const NewsList = () => {
     filters.pageSize,
   ]);
 
-  if (error) return <div>Could not fetch articles, try again later</div>;
+  if (error)
+    return (
+      <div>
+        <div onClick={() => console.log(filters)}>console log</div>Could not
+        fetch articles, try again later
+      </div>
+    );
   if (!data) return <div>Loading...</div>;
 
   return (
