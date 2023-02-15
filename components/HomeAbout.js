@@ -16,7 +16,7 @@ function HomeAbout() {
               className="object-contain"
             />
           </div>
-          <div className="flex flex-col w-full gap-[15px] border-white border-2 -mt-[1px] bg-[#242730] text-white lg:bg-inherit lg:text-white/70 p-[20px] lg:p-0 rounded-md">
+          <div className="flex flex-col w-full gap-[15px] border-white border-2 lg:border-0 lg:mt-0 -mt-[1px] bg-[#242730] text-white lg:bg-inherit lg:text-white/70 p-[20px] lg:p-0 rounded-md">
             <p>
               Hi there, my name is Jeremy Wijanto, I am a self-taught frontend
               developer with a strong passion for creating exceptional
