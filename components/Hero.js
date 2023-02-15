@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import Section from "./Section";
+import useWindowSize from "../hooks/UseWindowSize";
 
 const hOne = "Hi, I'm Jeremy";
 const hTwo = "I'm a Frontend Developer";
@@ -246,13 +247,15 @@ function Banner() {
 }
 
 function Hero() {
+  const size = useWindowSize();
+  const isMobile = size.width < 1024;
   const [loading, setLoading] = useState(true);
   return (
     <AnimateSharedLayout type="crossfade">
       <Section>
         <motion.div className="relative h-[90vh] w-full">
           <AnimatePresence>
-            {loading ? (
+            {loading && !isMobile ? (
               <motion.div key="loader" className="w-full absolute left-0 top-0">
                 <Loader setLoading={setLoading} />
               </motion.div>
