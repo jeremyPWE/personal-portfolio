@@ -54,13 +54,7 @@ const NewsList = () => {
     filters.pageSize,
   ]);
 
-  if (error)
-    return (
-      <div>
-        <div onClick={() => console.log(filters)}>console log</div>Could not
-        fetch articles, try again later
-      </div>
-    );
+  if (error) return <div>Could not fetch articles, try again later</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
