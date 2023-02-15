@@ -11,11 +11,10 @@ function scrollToTop() {
 
 function Footer() {
   return (
-    <Section
-      className="text-white flex flex-col w-full items-center pt-[80px] pb-[50px]"
-      id="contact"
-    >
-      <h1 className="">Get In Touch.</h1>
+    <Section className="text-white flex flex-col w-full items-center pt-[80px] pb-[50px]">
+      <h1 className="" id="contact">
+        Get In Touch.
+      </h1>
       <p className="max-w-[600px] text-center pt-[20px] opacity-60">
         I am always open to exploring new collaborations and projects. If you
         have a potential opportunity, a question, or just want to say hello,

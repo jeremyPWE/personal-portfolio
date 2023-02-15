@@ -4,8 +4,8 @@ import Section from "./Section";
 
 function HomeAbout() {
   return (
-    <Section className="pb-[150px]" id="about">
-      <div className="flex flex-col w-full">
+    <Section className="pb-[150px]">
+      <div className="flex flex-col w-full" id="about">
         <h2 className="">About Me</h2>
         <div className="flex flex-col justify-center items-center lg:flex-row lg:pt-[40px]">
           <div className="relative lg:hidden w-[340px] aspect-[1.39]">
