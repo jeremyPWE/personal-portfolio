@@ -3,18 +3,25 @@ module.exports = {
   content: ["./pages/**/*.{html,js}", "./components/**/*.{html,js}"],
   theme: {
     extend: {
-      gridTemplateColumns: {
-        // For small screens (mobile)
-        1: "repeat(1, minmax(0, 1fr))",
-        // For medium screens (tablets)
-        2: "repeat(2, minmax(0, 1fr))",
-        // For large screens (desktops)
-        3: "repeat(3, minmax(0, 1fr))",
+      colors: {
+        accent: "#2B8CC4",
+        highlight: "#0096EC",
       },
       keyframes: {
         blink: { "0%, 100%": { opacity: 1 }, "50%": { opacity: 0 } },
+        tiltShake: {
+          "0% ": { transform: "rotate(0deg)" },
+          "25%": { transform: "rotate(3deg)" },
+          "50%": { transform: "rotate(0deg)" },
+          "75%": { transform: "rotate(-3deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
-      animation: { blinking: "blink 1s ease-in-out infinite" },
+
+      animation: {
+        blinking: "blink 1s ease-in-out infinite",
+        tiltShaking: "tiltShake 1s linear infinite",
+      },
     },
   },
   plugins: [require("tw-elements/dist/plugin")],

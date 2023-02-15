@@ -8,10 +8,10 @@ function HomeProject() {
     <Section className="py-[100px]">
       <div className="w-full">
         <h2 className="">Personal Project</h2>
-        <div className="grid grid-cols-2 w-full gap-x-[30px] pt-[40px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-[30px] pt-[20px] lg:pt-[40px]">
           <Link href="/project/news" className="border rounded-md">
-            <div className="xl:py-[20px] xl:px-[40px]">
-              <h3 className="pb-[15px]">NEWS APP</h3>
+            <div className="p-[20px] xl:py-[20px] xl:px-[40px]">
+              <h3 className="pb-[15px] font-medium">NEWS APP</h3>
               <div className="relative w-full aspect-[1.593]">
                 {/* <Image
                   src="/home-project/news-app-icon.png"
@@ -36,8 +36,8 @@ function HomeProject() {
             </div>
           </Link>
           <Link href="/project/kanban" className="border rounded-md">
-            <div className="xl:py-[20px] xl:px-[40px]">
-              <h3 className="pb-[15px]">KANBAN BOARD</h3>
+            <div className="p-[20px] xl:py-[20px] xl:px-[40px]">
+              <h3 className="pb-[15px] font-medium">KANBAN BOARD</h3>
               <div className="relative w-full aspect-[1.593]">
                 {/* <Image
                   src="/home-project/kanban-board-icon.png"
