@@ -21,9 +21,9 @@ function Footer() {
         please don&lsquo;t hesitate to get in touch. I&lsquo;ll do my best to
         get back to you as soon as possible.
       </p>
-      <ul className="flex gap-x-[35px] pt-[45px]">
+      <ul className="flex gap-x-[15px] lg:gap-x-[35px] pt-[45px]">
         <li
-          className={`hover:text-highlight hover:border-highlight text-accent/80 border border-accent/80 py-[4px] px-[10px] rounded-md w-[100px] flex items-center justify-center`}
+          className={`hover:text-highlight hover:border-highlight text-accent/80 border border-accent/80 py-[4px] px-[10px] rounded-md w-[80px] lg:w-[100px] flex items-center justify-center`}
         >
           <Link
             href="mailto:jpwijanto@gmail.com"
@@ -34,7 +34,18 @@ function Footer() {
           </Link>
         </li>
         <li
-          className={`hover:text-highlight hover:border-highlight text-accent/80 border border-accent/80 py-[4px] px-[10px] rounded-md w-[100px] flex items-center justify-center`}
+          className={`hover:text-highlight hover:border-highlight text-accent/80 border border-accent/80 py-[4px] px-[10px] rounded-md w-[80px] lg:w-[100px] flex items-center justify-center`}
+        >
+          <Link
+            href="https://wa.me/085156989761"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Whatsapp
+          </Link>
+        </li>
+        <li
+          className={`hover:text-highlight hover:border-highlight text-accent/80 border border-accent/80 py-[4px] px-[10px] rounded-md w-[80px] lg:w-[100px] flex items-center justify-center`}
         >
           <Link
             href="https://www.linkedin.com/in/jeremy-wijanto-05642a109/"
