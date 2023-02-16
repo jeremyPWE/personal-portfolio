@@ -23,7 +23,7 @@ const popIn = {
   end: {
     opacity: 1,
     transition: {
-      duration: 0.2,
+      duration: 0.25,
       ease: "linear",
       delay: 0.4,
     },
@@ -79,9 +79,15 @@ const sceneOne = (setScene) => {
   return (
     <motion.h1
       key="one"
-      variants={popIn}
-      initial="start"
-      animate="end"
+      initial={{ opacity: 1 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          duration: 0.3,
+          ease: "linear",
+          delay: 0.8,
+        },
+      }}
       className={`${size["text"]}`}
       onAnimationComplete={() => setScene("two")}
     >
