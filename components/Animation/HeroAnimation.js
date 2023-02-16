@@ -85,7 +85,7 @@ const sceneOne = (setScene) => {
         transition: {
           duration: 0.3,
           ease: "linear",
-          delay: 0.8,
+          delay: 0.5,
         },
       }}
       className={`${size["text"]}`}
@@ -262,7 +262,7 @@ const sceneSeven = (setScene) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.2, ease: "linear", delay: 0.2 },
+          transition: { duration: 0.12, ease: "linear", delay: 0.12 },
         }}
         className="absolute aspect-[0.8235] w-[60px] top-[10px] rotate-[10deg] z-[-10]"
       >
@@ -278,7 +278,7 @@ const sceneSeven = (setScene) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.2, ease: "linear", delay: 0.6 },
+          transition: { duration: 0.12, ease: "linear", delay: 0.36 },
         }}
         className="absolute aspect-[0.8235] w-[60px] top-[25px] right-[20px] rotate-[-30deg]"
       >
@@ -294,7 +294,7 @@ const sceneSeven = (setScene) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.2, ease: "linear", delay: 0.7 },
+          transition: { duration: 0.12, ease: "linear", delay: 0.48 },
         }}
         onAnimationComplete={() => setScene("eight")}
         className="absolute aspect-[0.8235] w-[80px] top-[150px] right-[120px] rotate-[10deg] z-[-10]"
@@ -311,7 +311,7 @@ const sceneSeven = (setScene) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.2, ease: "linear", delay: 0.4 },
+          transition: { duration: 0.12, ease: "linear", delay: 0.24 },
         }}
         className="absolute aspect-[0.8235] w-[60px] top-[280px] left-[20px] rotate-[40deg]"
       >
@@ -327,7 +327,7 @@ const sceneSeven = (setScene) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { duration: 0.2, ease: "linear", delay: 0 },
+          transition: { duration: 0.12, ease: "linear", delay: 0 },
         }}
         className="absolute aspect-[0.8235] w-[60px] top-[330px] right-[40px] rotate-[-10deg] z-[-10]"
       >
