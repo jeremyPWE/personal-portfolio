@@ -23,7 +23,7 @@ const popIn = {
   end: {
     opacity: 1,
     transition: {
-      duration: 0.25,
+      duration: 0.2,
       ease: "linear",
       delay: 0.4,
     },

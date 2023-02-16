@@ -7,7 +7,8 @@ function Header({ ...props }) {
       <title>Jeremy Wijanto</title>
       <meta
         name="description"
-        content="Jeremy is a Frontend Developer specializing in exceptional and accessible digital experiences."
+        content="Jeremy is a Frontend Developer specializing in creating responsive, exceptional,
+        and functional web experience"
       />
       <link rel="icon" href="/jw-icon.png" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -17,7 +18,8 @@ function Header({ ...props }) {
       <meta property="og:title" content="Jeremy Wijanto" />
       <meta
         property="og:description"
-        content="Jeremy is a Frontend Developer specializing in exceptional and accessible digital experiences."
+        content="Jeremy is a Frontend Developer specializing in creating responsive, exceptional,
+        and functional web experience"
       />
       <meta property="og:image" content="/jw-icon.png" />
       <meta property="twitter:card" content="summary_large_image" />
@@ -25,7 +27,8 @@ function Header({ ...props }) {
       <meta property="twitter:title" content="Jeremy Wijanto" />
       <meta
         property="twitter:description"
-        content="Jeremy is a Frontend Developer specializing in exceptional and accessible digital experiences."
+        content="Jeremy is a Frontend Developer specializing in creating responsive, exceptional,
+        and functional web experience"
       />
       <meta property="twitter:image" content="jw-icon.png" />
     </Head>
