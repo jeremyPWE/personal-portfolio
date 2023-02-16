@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import Image from "next/image";
-import { bgGrid } from "./bgGrid";
+import { bgGrid } from "./BgGrid";
 import useWindowSize from "../../hooks/UseWindowSize";
 
 const size = {
