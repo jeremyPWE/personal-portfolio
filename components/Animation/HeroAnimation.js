@@ -582,42 +582,46 @@ function HeroAnimation() {
   const renderScene = (scene, isMobile) => {
     switch (scene) {
       case "one":
-        return <motion.div>{sceneOne(setScene)}</motion.div>;
+        return sceneOne(setScene);
       case "two":
-        return <motion.div>{sceneTwo(setScene)}</motion.div>;
+        return sceneTwo(setScene);
       case "three":
-        return <motion.div>{sceneThree(setScene)}</motion.div>;
+        return sceneThree(setScene);
       case "four":
-        return <motion.div>{sceneFour(setScene)}</motion.div>;
+        return sceneFour(setScene);
       case "five":
-        return <motion.div>{sceneFive(setScene)}</motion.div>;
+        return sceneFive(setScene);
       case "six":
-        return <motion.div>{sceneSix(setScene)}</motion.div>;
+        return sceneSix(setScene);
       case "seven":
-        return <motion.div>{sceneSeven(setScene)}</motion.div>;
+        return sceneSeven(setScene);
       case "eight":
-        return <motion.div>{sceneEight(setScene)}</motion.div>;
+        return sceneEight(setScene);
       case "nine":
-        return <motion.div>{sceneNine(setScene)}</motion.div>;
+        return sceneNine(setScene);
       case "ten":
-        return <motion.div>{sceneTen(setScene)}</motion.div>;
+        return sceneTen(setScene);
       case "eleven":
-        return <motion.div>{sceneEleven(setScene)}</motion.div>;
+        return sceneEleven(setScene);
       case "twelve":
-        return <motion.div>{sceneTwelve(setScene)}</motion.div>;
+        return sceneTwelve(setScene);
       case "thirteen":
-        return <motion.div>{sceneThirteen(setScene)}</motion.div>;
+        return sceneThirteen(setScene);
       case "fourteen":
-        return <motion.div>{sceneFourteen(setScene, isMobile)}</motion.div>;
+        return sceneFourteen(setScene, isMobile);
       case "fifteen":
-        return <motion.div>{sceneFifteen(setScene)}</motion.div>;
+        return sceneFifteen(setScene);
       default:
         return null;
     }
   };
   return (
     <AnimateSharedLayout>
-      <AnimatePresence>{renderScene(scene, isMobile)}</AnimatePresence>
+      <AnimatePresence>
+        <motion.div className="w-[360px] h-[402px] flex items-center justify-center">
+          {renderScene(scene, isMobile)}
+        </motion.div>
+      </AnimatePresence>
     </AnimateSharedLayout>
   );
 }

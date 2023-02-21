@@ -12,7 +12,7 @@ function HomeWork() {
             <div
               className={`cursor-pointer flex items-center p-[4px] justify-center w-1/2 lg:justify-start lg:w-full ${
                 work === "merokket"
-                  ? "bg-accent/40 border-b-[3px] border-highlight"
+                  ? "bg-accent/40 border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-highlight"
                   : ""
               }`}
               onClick={() => setWork("merokket")}
@@ -22,7 +22,7 @@ function HomeWork() {
             <div
               className={`cursor-pointer flex items-center p-[4px] justify-center w-1/2 lg:justify-start lg:w-full ${
                 work === "saweria"
-                  ? "bg-accent/40 border-b-[3px] border-highlight"
+                  ? "bg-accent/40 border-b-[3px] lg:border-b-0 lg:border-l-[3px] border-highlight"
                   : ""
               }`}
               onClick={() => setWork("saweria")}
