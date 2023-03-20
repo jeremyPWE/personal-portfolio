@@ -62,6 +62,28 @@ function HomeProject() {
               </p>
             </div>
           </Link>
+          <Link href="/project/kanban" className="border rounded-md">
+            <div className="p-[20px] xl:py-[20px] xl:px-[40px]">
+              <h3 className="pb-[15px] font-medium">LEETCODE 75 SOLUTION</h3>
+              <div className="relative w-full aspect-[1.593]">
+                {/* <Image
+                  src="/home-project/kanban-board-icon.png"
+                  alt="kanban board icon"
+                  fill
+                  className="object-contain"
+                /> */}
+                <video playsInline loop autoPlay muted>
+                  <source
+                    src="/home-project/kanban-board-video.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+              <p className="pt-[8px] xl:pt-[15px] opacity-70">
+                This is leetcode 75 solution.
+              </p>
+            </div>
+          </Link>
         </div>
       </div>
     </Section>
