@@ -34,6 +34,18 @@ const Navbar = ({ toggle, route, router, ...props }) => {
             <div className={props.className}>Work</div>
           </Link>
           <Link
+            href="#work"
+            passHref
+            className={`p-4 hidden md:flex relative items-center gap-2 text-[16px]`}
+          >
+            <div className={`hover:opacity-100 opacity-60 ${props.className}`}>
+              Leetcode 75
+            </div>
+            <div className="absolute top-[36px] text-[12px] text-[#54cfee] opacity-100">
+              Ongoing
+            </div>
+          </Link>
+          <Link
             href="#contact"
             passHref
             className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
