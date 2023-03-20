@@ -20,21 +20,21 @@ const Navbar = ({ toggle, route, router, ...props }) => {
         </div>
         <div className="flex">
           <Link
-            href="#about"
+            href="/#about"
             passHref
             className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
           >
             <div className={props.className}>About</div>
           </Link>
           <Link
-            href="#work"
+            href="/#work"
             passHref
             className={`p-4 hidden md:flex hover:opacity-100 opacity-60 items-center gap-2 text-[16px]`}
           >
             <div className={props.className}>Work</div>
           </Link>
           <Link
-            href="#contact"
+            href="/#contact"
             passHref
             className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
           >
@@ -103,18 +103,22 @@ const Sidebar = ({ isOpen, toggle, route, ...props }) => {
             onClick={toggle}
           >
             <li className="w-full">
-              <Link href="#about" passHref className={`block px-5 text-[22px]`}>
+              <Link
+                href="/#about"
+                passHref
+                className={`block px-5 text-[22px]`}
+              >
                 <div>About</div>
               </Link>
             </li>
             <li className="w-full">
-              <Link href="#work" passHref className={`block px-5 text-[22px]`}>
+              <Link href="/#work" passHref className={`block px-5 text-[22px]`}>
                 <div>Work</div>
               </Link>
             </li>
             <li className="w-full">
               <Link
-                href="#contact"
+                href="/#contact"
                 passHref
                 className={`block px-5 text-[22px]`}
               >
