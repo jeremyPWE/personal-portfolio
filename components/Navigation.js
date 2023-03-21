@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Section from "./Section";
 import { useState } from "react";
 import { useRouter } from "next/router";
