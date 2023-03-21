@@ -6,7 +6,7 @@ export default function Leetcode() {
     <>
       <Header />
       <Layout>
-        <div className="px-[20px] flex gap-[20px] w-full max-w-[1920px] pt-[50px]">
+        <div className="px-[20px] flex gap-[20px] w-full max-w-[1920px] pt-[50px] min-h-[80vh]">
           <div className="w-1/5 block border border-red-200">
             leetcode question
           </div>

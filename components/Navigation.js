@@ -34,7 +34,7 @@ const Navbar = ({ toggle, route, router, ...props }) => {
             <div className={props.className}>Work</div>
           </Link>
           <Link
-            href="#work"
+            href="/project/leetcode"
             passHref
             className={`p-4 hidden md:flex relative items-center gap-2 text-[16px]`}
           >
