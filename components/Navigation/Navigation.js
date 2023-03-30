@@ -149,14 +149,11 @@ const Sidebar = ({ isOpen }) => {
 
 const Navigation = ({ t, ...props }) => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isOpen, setIsOpen] = useCycle(false, true);
   return (
     <div className="overflow-hidden w-full">
       <Navbar
-        toggle={toggle}
+        toggle={() => setIsOpen()}
         route={router.pathname}
         router={router}
         t={t}
@@ -164,7 +161,7 @@ const Navigation = ({ t, ...props }) => {
       />
       <Sidebar
         isOpen={isOpen}
-        toggle={toggle}
+        toggle={() => setIsOpen()}
         route={router.pathname}
         t={t}
         {...props}
