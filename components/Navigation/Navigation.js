@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Section from "./Section";
+import Section from "../Section";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
