@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Section from "../Section";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 const links = [
@@ -10,9 +10,34 @@ const links = [
 ];
 
 const Navbar = ({ toggle, route, router, ...props }) => {
+  const [showNav, setShowNav] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const currentScrollPos = window.scrollY;
+      setShowNav(currentScrollPos < prevScrollPos || currentScrollPos === 0);
+      setPrevScrollPos(currentScrollPos);
+    }, 100);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
+
   return (
     <nav
-      className="flex relative top-0 z-30 py-2 justify-center"
+      className={`flex fixed top-0 z-30 py-2 justify-center w-full ${
+        showNav
+          ? "transform translate-y-0 bg-[#0F1012]"
+          : "transform -translate-y-full "
+      }`}
       role="navigation"
     >
       <Section>
