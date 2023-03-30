@@ -3,6 +3,12 @@ import Section from "../Section";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
+const links = [
+  { name: "About", to: "/#about", id: "ABOUT US" },
+  { name: "Work", to: "/#work", id: "OUR WORKS" },
+  { name: "Contact", to: "/#contact", id: "CONTACT" },
+];
+
 const Navbar = ({ toggle, route, router, ...props }) => {
   return (
     <nav
@@ -18,27 +24,16 @@ const Navbar = ({ toggle, route, router, ...props }) => {
           </div>
         </div>
         <div className="flex">
-          <Link
-            href="/#about"
-            passHref
-            className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
-          >
-            <div className={props.className}>About</div>
-          </Link>
-          <Link
-            href="/#work"
-            passHref
-            className={`p-4 hidden md:flex hover:opacity-100 opacity-60 items-center gap-2 text-[16px]`}
-          >
-            <div className={props.className}>Work</div>
-          </Link>
-          <Link
-            href="/#contact"
-            passHref
-            className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
-          >
-            <div className={props.className}>Contact</div>
-          </Link>
+          {links.map(({ name, to, id }) => (
+            <Link
+              key={id}
+              href={to}
+              passHref
+              className={`p-4 hover:opacity-100 opacity-60 items-center gap-2 hidden md:flex text-[16px]`}
+            >
+              <div className={props.className}>{name}</div>
+            </Link>
+          ))}
         </div>
         <div className="cursor-pointer md:hidden" onClick={toggle}>
           <svg
