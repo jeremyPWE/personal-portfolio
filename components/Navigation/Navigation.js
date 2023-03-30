@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Section from "../Section";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { MenuToggle } from "./MenuToggle";
 
 const links = [
   { name: "About", to: "/#about", id: "ABOUT US" },
@@ -9,7 +11,29 @@ const links = [
   { name: "Contact", to: "/#contact", id: "CONTACT" },
 ];
 
-const Navbar = ({ toggle, route, router, ...props }) => {
+const itemVariants = {
+  closed: {
+    opacity: 0,
+  },
+  open: { opacity: 1 },
+};
+
+const sideVariants = {
+  closed: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: -1,
+    },
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1,
+    },
+  },
+};
+
+const Navbar = ({ isOpen, toggle, route, router, ...props }) => {
   const [showNav, setShowNav] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
 
@@ -33,7 +57,7 @@ const Navbar = ({ toggle, route, router, ...props }) => {
 
   return (
     <nav
-      className={`flex fixed top-0 z-30 py-2 justify-center w-full ${
+      className={`flex fixed top-0 z-40 py-2 justify-center w-full ${
         showNav
           ? "transform translate-y-0 bg-[#0F1012]"
           : "transform -translate-y-full "
@@ -60,94 +84,66 @@ const Navbar = ({ toggle, route, router, ...props }) => {
             </Link>
           ))}
         </div>
-        <div className="cursor-pointer md:hidden" onClick={toggle}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 "
-            fill="main"
-            viewBox="0 0 24 24"
-            stroke="white"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </div>
+        <motion.div
+          initial={false}
+          animate={isOpen ? "open" : "closed"}
+          className={`md:hidden`}
+        >
+          <MenuToggle toggle={toggle} isOpen={isOpen} />
+        </motion.div>
       </Section>
     </nav>
   );
 };
 
-const Sidebar = ({ isOpen, toggle, route, ...props }) => {
+const Sidebar = ({ isOpen }) => {
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
   return (
-    <div
-      className={
-        isOpen
-          ? "fixed z-30 bg-black top-0 w-full h-full lg:hidden translate-y-0 duration-700 transform ease-out"
-          : "translate-y-[-100%]"
-      }
+    <nav
+      className="fixed top-0 z-30 py-2 justify-between md:hidden flex w-full"
+      role="navigation"
     >
-      <div
-        className={`absolute  top-0 right-0 z-30 w-full bg-bgCol h-full text-main overflow-hidden flex flex-col items-center justify-center`}
-      >
-        <div className="flex py-2 items-center w-full justify-between px-4 sm:px-0 z-10 max-w-[500px]">
-          <div className="flex items-center relative w-[125px] h-[45px] md:w-[170px] md:h-[65px] xl:w-[224px] xl:h-[82px]">
-            <Link href="/" passHref className="font-extrabold text-[24px]">
-              <div className="text-white">jw</div>
-            </Link>
-          </div>
-
-          <div className="cursor-pointer z-10 " onClick={toggle}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              viewBox="0 0 20 20"
-              fill="white"
-            >
-              <path
-                fillRule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div className="w-full flex flex-col h-full justify-center items-center z-40">
-          <ul
-            className="px-4 pt-3 -mt-40 text-white w-full z-10 text-center flex flex-col gap-y-[50px]"
-            onClick={toggle}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.aside
+            initial={{
+              height: 0,
+            }}
+            animate={{
+              height: "100vh",
+              transition: { duration: 0.3 },
+            }}
+            exit={{
+              height: 0,
+              transition: { delay: 0.7, duration: 0.3 },
+            }}
+            className="bg-[#0F1012] w-full"
           >
-            <li className="w-full">
-              <Link
-                href="/#about"
-                passHref
-                className={`block px-5 text-[22px]`}
-              >
-                <div>About</div>
-              </Link>
-            </li>
-            <li className="w-full">
-              <Link href="/#work" passHref className={`block px-5 text-[22px]`}>
-                <div>Work</div>
-              </Link>
-            </li>
-            <li className="w-full">
-              <Link
-                href="/#contact"
-                passHref
-                className={`block px-5 text-[22px]`}
-              >
-                <div>Contact</div>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+            <motion.div
+              className="flex flex-col items-center justify-center h-full mt-[-30px]"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={sideVariants}
+            >
+              {links.map(({ name, to, id }) => (
+                <motion.a
+                  key={id}
+                  href={to}
+                  whileHover={{ scale: 1.1 }}
+                  variants={itemVariants}
+                  className="text-[#f9fafb] text-[1.75rem] px-[40px] py-[10px] m-[10px]"
+                >
+                  {name}
+                </motion.a>
+              ))}
+            </motion.div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
