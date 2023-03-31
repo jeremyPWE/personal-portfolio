@@ -96,7 +96,7 @@ const Navbar = ({ isOpen, toggle, route, router, ...props }) => {
   );
 };
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, toggle }) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
@@ -132,6 +132,7 @@ const Sidebar = ({ isOpen }) => {
                 <motion.a
                   key={id}
                   href={to}
+                  onClick={toggle}
                   whileHover={{ scale: 1.1 }}
                   variants={itemVariants}
                   className="text-[#f9fafb] text-[1.75rem] px-[40px] py-[10px] m-[10px]"
