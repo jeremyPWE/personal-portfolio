@@ -153,6 +153,7 @@ const Navigation = ({ t, ...props }) => {
   return (
     <div className="overflow-hidden w-full">
       <Navbar
+        isOpen={isOpen}
         toggle={() => setIsOpen()}
         route={router.pathname}
         router={router}
